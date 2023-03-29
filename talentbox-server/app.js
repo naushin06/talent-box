@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect("<your-mongodb-connection-string>", {
+mongoose.connect("mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
