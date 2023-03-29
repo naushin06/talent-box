@@ -9,13 +9,7 @@ app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
 
-app.use(
-  cors({
-    origin: ["https://talent-box-ui-v4q9.vercel.app/"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+
 try {
   mongoose
     .connect(
