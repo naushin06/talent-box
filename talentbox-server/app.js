@@ -9,7 +9,7 @@ app.listen(5000, () => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://talent-box-ui-v4q9.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   })
