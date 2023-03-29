@@ -11,6 +11,9 @@
         {
           "src": "/(.*)",
           "dest": "app.js"
+        },{
+            "src": "/login",
+            "dest": "controllers/authController"
         }
 
       ]

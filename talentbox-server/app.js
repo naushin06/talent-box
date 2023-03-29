@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 // Enable CORS for your app
-app.use(cors({
-  origin: ["http://localhost:3000"],
-  methods: ["GET", "POST"],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: ["http://localhost:3000"],
+//   methods: ["GET", "POST"],
+//   credentials: true
+// }));
 
 // Define your routes
 app.get("/", (req, res) => {
