@@ -11,21 +11,21 @@ app.get("/", (req, res) => {
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
-try {
-  mongoose
-    .connect(
-      "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    )
-    .then(() => {
-      console.log("Db CONNECT");
-    });
-} catch (error) {
-  console.log(error.message);
-}
+// try {
+//   mongoose
+//     .connect(
+//       "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
+//       {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       }
+//     )
+//     .then(() => {
+//       console.log("Db CONNECT");
+//     });
+// } catch (error) {
+//   console.log(error.message);
+// }
 
 // Export the Express API
 module.exports = app;
