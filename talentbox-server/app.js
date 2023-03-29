@@ -75,22 +75,21 @@ const cookieParser = require("cookie-parser");
 app.get("/", (req, res) => {
 
   res.send("Express on Vercel");
-
 });
 
-app.use(
+// app.use(
 
-  cors({
+//   cors({
 
-    origin: ["http://localhost:3000"],
+//     origin: ["http://localhost:3000"],
 
-    methods: ["GET", "POST"],
+//     methods: ["GET", "POST"],
 
-    credentials: true,
+//     credentials: true,
 
-  })
+//   })
 
-);
+// );
 
 try {
 
@@ -99,15 +98,10 @@ try {
     .connect(
 
       "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
-
       {
-
         useNewUrlParser: true,
-
         useUnifiedTopology: true,
-
       }
-
     )
 
     .then(() => {
