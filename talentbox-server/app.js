@@ -54,5 +54,5 @@ process.on("SIGTERM", () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use("/talentbox", genericRoutes);
+app.use("/", genericRoutes);
  module.exports = app;
