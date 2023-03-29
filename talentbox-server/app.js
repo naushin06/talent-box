@@ -2,27 +2,70 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
+
+// Enable CORS for your app
+app.use(cors({
+  origin: ["http://localhost:3000"],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
+// Define your routes
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
-try {
-  mongoose
-    .connect(
-      "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    )
-    .then(() => {
-      console.log("Db CONNECT");
-    });
-} catch (error) {
-  console.log(error.message);
-}
+// Connect to MongoDB and handle errors
+mongoose
+  .connect(
+    "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Db CONNECT");
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
+
 // Export the Express API
 module.exports = app;
+
+
+
+// const express = require("express");
+// const app = express();
+// const mongoose = require("mongoose");
+// const cors = require("cors");
+// app.get("/", (req, res) => {
+//   res.send("Express on Vercel");
+// });
+
+// try {
+//   mongoose
+//     .connect(
+//       "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
+//       {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       }
+//     )
+//     .then(() => {
+//       console.log("Db CONNECT");
+//     });
+// } catch (error) {
+//   console.log(error.message);
+// }
+// // Export the Express API
+// module.exports = app;
+
+
+
+
+
 
 
 // const express = require("express");
