@@ -1,13 +1,34 @@
-// // const express = require("express");
-// // const app = express();
-// // app.get("/", (req, res) => {
-// //   res.send("Express on Vercel");
-// // });
-// // app.listen(5000, () => {
-// //   console.log("Running on port 5000.");
-// // });
-// // // Export the Express API
-// // module.exports = app;
+
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const genericRoutes = require("./routes/commonRoutes");
+const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
+});
+try {
+  mongoose
+    .connect(
+      "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .then(() => {
+      console.log("Db CONNECT");
+    });
+} catch (error) {
+  console.log(error.message);
+}
+
+// Export the Express API
+module.exports = app;
 
 
 // const express = require("express");
@@ -60,22 +81,23 @@
 
 
 
-const express = require("express");
+// const express = require("express");
 
-const cors = require("cors");
+// const cors = require("cors");
 
-const app = express();
+// const app = express();
 
-const genericRoutes = require("./routes/commonRoutes");
+// const genericRoutes = require("./routes/commonRoutes");
 
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
 
-  res.send("Express on Vercel");
-});
+//   res.send("Express on Vercel");
+
+// });
 
 // app.use(
 
@@ -116,11 +138,12 @@ app.get("/", (req, res) => {
 
 // }
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
-app.use(express.json());
+// app.use(express.json());
+
 // app.use("/", genericRoutes);
 
-module.exports = app;
+// module.exports = app;
 
 
