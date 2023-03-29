@@ -91,36 +91,35 @@ app.get("/", (req, res) => {
 
 // );
 
-try {
+// try {
 
-  mongoose
+//   mongoose
 
-    .connect(
+//     .connect(
 
-      "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    )
+//       "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
+//       {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       }
+//     )
 
-    .then(() => {
+//     .then(() => {
 
-      console.log("Db CONNECT");
+//       console.log("Db CONNECT");
 
-    });
+//     });
 
-} catch (error) {
+// } catch (error) {
 
-  console.log(error.message);
+//   console.log(error.message);
 
-}
+// }
 
 app.use(cookieParser());
 
 app.use(express.json());
-
-app.use("/", genericRoutes);
+// app.use("/", genericRoutes);
 
 module.exports = app;
 
