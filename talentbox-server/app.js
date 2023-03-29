@@ -1,35 +1,13 @@
-
 const express = require("express");
-const cors = require("cors");
 const app = express();
-const genericRoutes = require("./routes/commonRoutes");
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
-// try {
-//   mongoose
-//     .connect(
-//       "mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox",
-//       {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//       }
-//     )
-//     .then(() => {
-//       console.log("Db CONNECT");
-//     });
-// } catch (error) {
-//   console.log(error.message);
-// }
-
 // Export the Express API
 module.exports = app;
-
 
 // const express = require("express");
 // const cors = require("cors");
