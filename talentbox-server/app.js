@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 
 app.get("/", (req, res) => {
-
+  res.send('hello23')
   mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -19,9 +19,6 @@ app.get("/", (req, res) => {
     console.error('Error connecting to MongoDB Atlas:', err);
   })
   res.send("Express on Vercel");
-});
-app.listen(5000, () => {
-  console.log("Running on port 5000.");
 });
 ;
 
