@@ -1,13 +1,30 @@
 const express = require("express");
 const app = express();
+const mongoose = require('mongoose');
+
+
+
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log('Connected to MongoDB Atlas!');
+})
+.catch((err) => {
+  console.error('Error connecting to MongoDB Atlas:', err);
+});
+
 // Export the Express API
 module.exports = app;
+
+
 
 // const express = require("express");
 // const app = express();
@@ -27,7 +44,7 @@ module.exports = app;
 // });
 
 // // Connect to MongoDB
-// mongoose.connect("mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox", {
+// mongoose.connect( , {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
 // })
