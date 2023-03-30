@@ -1,32 +1,54 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
-const cors = require("cors");
-
-// Enable CORS for your app
-app.use(cors({
-  origin: ["http://localhost:3000"],
-  methods: ["GET", "POST"],
-  credentials: true
-}));
-
-// Define your routes
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Express on Vercel");
 });
-
-// Connect to MongoDB
-mongoose.connect("mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log("MongoDB connected!");
-})
-.catch(err => console.error(err));
-
-// Export the Express app
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
+});
+// Export the Express API
 module.exports = app;
+
+// const express = require("express");
+// const app = express();
+// const mongoose = require("mongoose");
+// const cors = require("cors");
+
+// // Enable CORS for your app
+// app.use(cors({
+//   origin: ["http://localhost:3000"],
+//   methods: ["GET", "POST"],
+//   credentials: true
+// }));
+
+// // Define your routes
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
+
+// // Connect to MongoDB
+// mongoose.connect("mongodb+srv://root:password123*@cluster0.hxeftjt.mongodb.net/talentbox", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+// .then(() => {
+//   console.log("MongoDB connected!");
+// })
+// .catch(err => console.error(err));
+
+// // Export the Express app
+// module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const express = require("express");
