@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     console.log('Connected to MongoDB Atlas!');
   })
   .catch((err) => {
+    res.send('hello23')
     console.error('Error connecting to MongoDB Atlas:', err);
   })
   res.send("Express on Vercel");
